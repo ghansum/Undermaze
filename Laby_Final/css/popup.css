@@ -1,0 +1,61 @@
+/************* CODE POUR LE POPUP *******************/
+
+#overlay{
+
+    display: none;
+    position: fixed;
+    top:-56px; 
+	right:0; 
+	bottom:0; 
+	left:0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+
+}
+
+#overlay:target{
+    display: block;
+	
+}
+
+#overlay a{
+
+    font-weight: bold;
+    background-color: white;
+    position: absolute;
+    top: 10.5%;
+    left: 83.6%;
+	border-radius: 6px;
+}
+
+#help{
+	color: white;
+	margin-left: 1200px;
+	margin-top: 240px;
+}
+
+#help3{
+	margin-left: 1010px;
+	margin-top: -578px;
+}
+
+#help4{
+	margin-left: -50px;
+	margin-top: -80px;
+}
+
+.popup_block{
+
+    background-image: url(../pictures/bazar.jpg);
+    background-size: 950px 500px;
+    padding: 130px;
+    border: 20px solid #ddd;
+    position: relative;
+    margin: 8% auto;
+    width: 50%;
+    color: white;
+    font-size: 19px;
+    box-shadow: 0px 0px 20px #000;
+    border-radius: 10px;
+}
+

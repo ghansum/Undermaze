@@ -1,0 +1,145 @@
+#manoir{ 
+background-image: url('../pictures/wall.jpg'); 
+}
+
+audio{
+border: groove #313131 5px;
+margin-left: 1000px;
+margin-top:  60px;
+background-color: #313131 ;
+box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7), -1px 2px 20px rgba(255, 255, 255, 0.6) inset fixed;
+}
+		
+#canvas1 {
+border: groove #313131 10px;
+margin-top: -90px;
+position: fixed;
+float:right;
+box-shadow: -1px 2px 30px 1px #010101, -1px 2px 30px inset; 
+/*transform:rotate(-8deg);
+-ms-transform:rotate(-8deg); /* IE 9 
+-webkit-transform:rotate(-8deg);  Safari and Chrome */
+}
+		
+#countdown1{
+border: groove #313131 10px;
+ text-align:center;
+ margin-left: 1000px;
+ margin-top: 100px;
+ width: 250px;
+height: 60px;
+ background-color: #313131;
+ color : #DCDCDC;
+font-family: 'Brixton Book', 'Myriad Pro', Arial, sans-serif;
+box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7), -1px 2px 20px rgba(255, 255, 255, 0.6) inset fixed; 
+}
+
+#score1{
+border: groove #313131 10px;
+text-align:center;
+margin-top: 30px;
+margin-left: 1000px;
+width: 250px;
+height:60px;
+background-color: #313131;
+color : #DCDCDC;
+display: block;
+}
+
+
+.retour1{
+		    margin-left: 1100px;
+			margin-top: 60px;
+		}
+
+/*
+#presentation{
+border: groove #313131 10px;
+ margin-top: -100px;
+margin-left: 1300px;
+width: 500px;
+height:60px;
+background-color: #313131;
+}*/
+
+
+@media screen and (min-width: 1500px) and (max-width: 1920px){
+	#manoir{
+		background-size: 1920px 1100px;
+	}
+
+	#countdown1{
+		margin-top: 300px;
+		margin-left: 1300px;
+	}
+	
+	#canvas1 {
+		margin-top: -100px;
+		margin-left: 200px;
+		float:right;
+	}
+	
+	#score1{
+		text-align:center;
+		margin-top: 100px;
+		margin-left: 1300px;
+	}
+
+	
+	
+	
+	.retour1{
+		    margin-left: 1400px;
+			margin-top: 60px;
+		}
+
+}
+
+/************* CODE POUR LE POPUP *******************/
+
+#overlay{
+
+    display: none;
+    position: fixed;
+    top:-56px; 
+	right:0; 
+	bottom:0; 
+	left:0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+
+}
+
+#overlay:target{
+    display: block;
+	
+}
+
+#overlay a{
+
+    font-weight: bold;
+    background-color: white;
+    position: absolute;
+    top: 10.5%;
+    left: 83.6%;
+	border-radius: 6px;
+}
+
+#help{
+	color: white;
+	margin-left: 1100px;
+	margin-top: 50px;
+}
+
+.popup_block{
+
+    background: #fff;
+    padding: 130px;
+    border: 20px solid #ddd;
+    position: relative;
+    margin: 8% auto;
+    width: 50%;
+    box-shadow: 0px 0px 20px #000;
+    border-radius: 10px;
+}
+

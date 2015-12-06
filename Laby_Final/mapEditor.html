@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mini-RPG</title>
+	</head>
+	<body>
+		<style>
+		html {
+			cursor : default;
+		}
+		canvas {
+			border: ridge;
+		}
+		::selection {/*corrige un effet indésirable, ici, de la sélection*/
+			background: rgba(0,0,0,0);
+		}
+		</style>
+		<canvas width="0" height="0">Votre navigateur ne supporte pas HTML5. Mettez vous à jour!</canvas><br />
+		<button onclick="drawTileset();">Afficher / enlever le quadrillage</button><br />
+		<canvas width="1232" height="512"></canvas><br />
+		<button onclick="quadrillage[1] = !quadrillage[1]; drawMap();">Afficher / enlever le quadrillage</button><br /><br />
+		<button onclick="mapToString();">Afficher le tableau de la carte</button>
+		<p id="myP"></p>
+		<script>
+		var downX, downY,//downX et downY nous servirons à chercher les coordonnées des clique sur la page complète
+		tile;//tile nous servira à enregistrer le numéro des tuiles sélectionnées lorsqu'on cliquera sur le premier canvas
+		var quadrillage = [false, false];//quadrillage[0] indique si on doit tracer un quadrillage sur le 1er canvas pour mieux s'en sortir et l'autre est pour le deuxième canvas
+		var canvas = document.querySelectorAll('canvas');//on récupère les deux canvas dans un tableau
+		var context = [];//on veut aussi récupérer les context dans un tableau
+		for (var i=0; i<canvas.length; i++) { context[i] = canvas[i].getContext('2d'); }//on récupère les 2 context qu'il nous fallait dans un tableau
+		
+		var tileset = new Image();//on créer une image
+		tileset.onload = function() {//lorsqu'elle sera chargé...
+			canvas[0].width = tileset.width;//...on initialisera la largeur du premier canvas à la largeur du tileset
+			canvas[0].height = tileset.height;//...on initialisera la hauteur du premier canvas à la hauteur du tileset
+			drawTileset();//...on dessinera le tileset
+			drawMap();//...et on dessinera la map (avis en aventurier qui veulent se faire un système d'auto sauvegarde de la carte en cas de bug. C'est fait pour moi mais sur un éditeur de map plus complet :p)
+		}
+		tileset.src = prompt("Veuillez entrer l'adresse du tileset :", "tileset.png");//on demande le tileset sur lequel on veut travailler
+		
+		function drawQuadrillage(context) {//on créer une fonction qui dessine un quadrillage sur un canvas
+			var nbrCasesX = context.canvas.width/16;//on cherche le nombre de traits verticaux à faire
+			var nbrCasesY = context.canvas.height/16;//on cherche le nombre de traits horizontaux à faire
+			for (var j=1; j<=nbrCasesX; j++) {//on dessine tout les traits verticaux
+				context.fillStyle="black";
+				context.fillRect(j*16,0,1,512);
+			}
+			for (var j=1; j<=nbrCasesY; j++) {//on dessine tout les traits horizontaux
+				context.fillStyle="black";
+				context.fillRect(0,j*16,1232,1);	
+			}
+		}
+		
+		function drawTileset() {//on créer une fonction qui va dessiner le tileset
+			context[0].drawImage(tileset,0,0);//on dessine le tileset
+			quadrillage[0] = !quadrillage[0];//on change la valeur du quadrillage
+			if (quadrillage[0]) {//si on souhaite dessiner un quadrillage sur le premier canvas
+				drawQuadrillage(context[0]);//on dessine le quadrillage
+			}
+		}
+		
+		var map=[];//map est un tableau...
+		for (var i=0; i<77; i++) {
+			map[i] = [];//...cotenant des tableau...
+			for (var j=0; j<32; j++) {
+				map[i][j] = 0;//..Où, par défaut, on met toute les valeurs des tuiles à 0
+			}
+		}
+		
+		function drawTile(num, posX, posY, context) {//en paramètre on demande le numéro de la tuile à dessiner, les 2 paramètres suivants servent à sélectionner la case du canvas et le context sert à choisir sur quel canvas nous allons dessiner la tuile (nous aurons plusieurs canvas par la suite)
+			var ligne = Math.ceil(num/(tileset.width/16));//on cherche sur quelle ligne ce trouve la tuile à dessiner
+			var colonne = num - ((ligne-1)*(tileset.width/16));//on cherche sur quelle colonne se trouve cette tuile 
+			context.drawImage(tileset, (colonne-1)*16, 16*(ligne-1), 16, 16, posX, posY, 16, 16);//on dessine la tuile à l'endroit voulu
+		}
+		
+		function drawMap() {//on créer une fonction qui va dessiner la map
+			context[1].clearRect(0,0,context[1].canvas.width, context[1].canvas.height);//on efface le second canvas
+			if (quadrillage[1]) {//si on souhaite dessiner un quadrillage sur le second canvas
+				drawQuadrillage(context[1]);//on dessine le quadrillage
+			}
+			for (var j=0; j<map.length; j++) {//on dessine la map
+				for (var i=0; i<map[j].length; i++) {
+					drawTile(map[j][i], i*16, j*16, context[1]);
+				}
+			}
+		}
+		
+		canvas[0].onclick = function(e) {//lorsqu'on clique sur le tileset, on récupère le numéro de la tuile
+			downX = e.x + document.body.scrollLeft - canvas[0].offsetLeft;//on cherche l'abscisse du clique sur la page entière
+			downY = e.y + document.body.scrollTop - canvas[0].offsetTop;//on cherche l'ordonné du clique sur la page entière
+			tile = Math.ceil(downX / 16) + ((tileset.width/16) * Math.floor(downY / 16));//on enregistre le numéro de la tuile
+		}
+		canvas[1].onclick = function(e) {//lorsqu'on clique sur le second canvas, on insert dans la map la tuile sélectionnée
+			downX = e.x + document.body.scrollLeft - canvas[1].offsetLeft;//on cherche l'abscisse du clique sur la page entière
+			downY = e.y + document.body.scrollTop - canvas[1].offsetTop;//on cherche l'ordonné du clique sur la page entière
+			var caseX = Math.floor(downX / 16);//on cherche la case sur l'abscisse où on a cliqué
+			var caseY = Math.floor(downY / 16);//on cherche la case sur l'ordonné où on a cliqué
+			map[caseY][caseX] = tile;//on enregistre la tuile qu'on vient de rentrer
+			context[1].clearRect(0,0,1232,512);//on efface le canvas
+			drawMap();//on redessine la map
+		}
+		canvas[1].ondblclick = function(e) {//il faut pensé à créer une fonction pour effacer en cas d'erreur... on fera ça lorsqu'on double clique
+			downX = e.x + document.body.scrollLeft - canvas[1].offsetLeft;//on cherche l'abscisse du double clique sur la page entière
+			downY = e.y + document.body.scrollTop - canvas[1].offsetTop;//on cherche l'ordonné du double clique sur la page entière
+			var caseX = Math.floor(downX / 16);//on cherche la case sur l'abscisse où on a double cliqué
+			var caseY = Math.floor(downY / 16);//on cherche la case sur l'ordonné où on a double cliqué
+			map[caseY][caseX] = 0;//on vide la case
+			context[1].clearRect(0,0,1232,512);//on efface le canvas
+			drawMap();//on redessine la map. La case double cliquée ne sera plus dessinée puisqu'on lui a donné 0 comme valeur
+		}
+		
+		function mapToString() {
+			var text = "map = [<br/>";//on ouvre le premier crochet
+			for (var j=0; j<map.length; j++) {//code exécuté le nombre de fois qu'il y a de ligne dans la map
+				text+="["//on ouvre le premier crochet de la ligne
+				for (var l=0; l<map[j].length; l++) {//code exécuté le nombre de fois qu'il y a de valeur de tuiles dans la ligne
+					text+=map[j][l];//on rajoute la valeur de la tuile au texte
+					if (l<(map[j].length-1)) { text+="," }//si on a pas ajouté la dernière valeur, on ajoute une virgule au texte
+				}
+				text+="]";//on a fini notre ligne, on ferme le crochet qu'on avait ouvert
+				if (j<(map.length-1)) { text+=",<br />"; }//si on a pas fini la dernière ligne, on ajoute une virgule
+			}
+			text+="<br />]";//o a fini notre dernière ligne, on ferme le premier crochet
+			document.getElementById('myP').innerHTML = text;
+		}
+		</script>
+	</body>
+</html>

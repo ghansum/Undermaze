@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Darker than darkness</title>
+		<link rel="stylesheet" href="css/style_laby.css"/>
+		<script type="text/javascript" src="javascript/jquery.js"></script>
+	</head>
+	<body id="ténèbres">
+		<center>
+
+	<canvas width="992" height="512" style="z-index: 0;">Votre navigateur ne supporte pas HTML5! Je vous conseil de vous mettre à jour!</canvas>
+		<canvas width="992" height="512" style="z-index: 1;"></canvas>
+		<canvas width="992" height="512"  style="z-index: 3;"></canvas>
+		<canvas width="992" height="512"  style="z-index: 4;"></canvas>
+		<canvas width="992" height="512"  style="z-index: 5;"></canvas>
+		<canvas width="992" height="512"  style="z-index: 6; "></canvas>
+
+		<div><script id="vide"></script></div>
+		<div id="countdown"></div>
+		<div id="score"></div>
+		<div id = "tab"></div>
+		<audio id="music3" src ="son/Lavanville.mp3" controls="controls" autoplay="autoplay"  loop="true"></audio>
+		<script type="text/javascript">
+			var monElementAudio = document.getElementById('music3');
+			monElementAudio.volume = 0.1;
+		</script>
+		<div id = "tab1"></div>
+		<script type="text/javascript" src="javascript/fonction_foret.js"></script>
+</center>
+	</body>
+</html>

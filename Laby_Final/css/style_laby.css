@@ -1,0 +1,509 @@
+								/*-------------------------15,6 pouce----------------------------*/
+								
+								/*-------------------------Laby Manoir-------------------------*/
+								
+#manoir{ 
+background-image: url('../pictures/wall.jpg'); 
+}
+
+audio{
+border: groove #313131 5px;
+margin-left: 1000px;
+margin-top:  310px;
+background-color: #313131 ;
+box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7), -1px 2px 20px rgba(255, 255, 255, 0.6) inset fixed;
+}
+		
+#canvas1 {
+border: groove #313131 10px;
+margin-top: -90px;
+position: fixed;
+float:right;
+box-shadow: -1px 2px 30px 1px #010101, -1px 2px 30px inset; 
+/*transform:rotate(-8deg);
+-ms-transform:rotate(-8deg);  IE 9 
+-webkit-transform:rotate(-8deg);  Safari and Chrome */
+}
+		
+#countdown1{
+border: groove #313131 10px;
+ text-align:center;
+ margin-left: 1000px;
+ margin-top: 100px;
+ width: 250px;
+height: 60px;
+ background-color: #313131;
+ color : #DCDCDC;
+font-family: 'Brixton Book', 'Myriad Pro', Arial, sans-serif;
+box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7), -1px 2px 20px rgba(255, 255, 255, 0.6) inset fixed; 
+}
+
+#score1{
+border: groove #313131 10px;
+text-align:center;
+margin-top: 30px;
+margin-left: 1000px;
+width: 250px;
+height:60px;
+background-color: #313131;
+color : #DCDCDC;
+display: block;
+}
+								
+								/*-------------------------Laby Ténèbres-------------------------*/
+	#tenebres{
+		background-image: url(../pictures/8070.jpg);
+		width: 90%;
+		height: 90%;
+	}
+
+	#tab{
+		background-image: url(../pictures/tumblr10.png);
+		margin-left: 95%;
+		margin-top: 10px;
+		width: 181px;
+		height: 512px;
+	}
+
+	#tab1{
+		background-image: url(../pictures/magicien_des_tenebres.png);
+		margin-left: -85%;
+		margin-top: -520px;
+		width: 180px;
+		height: 512px;
+	}
+
+	.bonjour{
+		text-align: center;
+		color: red;
+		background-image: url(../pictures/Caius_Monarque_YuGiOh.png);
+	} 
+
+	audio{
+		margin-top: 10px;
+		margin-left: -150px;
+		position: fixed;
+	}
+	
+	canvas {
+			border: ridge;
+			position: fixed;
+			left: 12%;
+			margin-top:70px;
+		}
+		
+		#countdown{
+		    margin-top: -40px;
+			margin-left: 300px;
+		    width: 250px;
+		    height: 60px;
+		    background: #8d4e93;
+		}
+
+		#score{
+		    margin-top: -60px;
+		    margin-left: -300px;
+		    width: 250px;
+		    height:60px;
+		    background: #dd69a2;
+		}
+		
+		.retour{
+		    margin-left: -800px;
+		}
+		
+		/*--------------------------Laby neige----------------------*/
+		#neige{
+		    background-image: url(../pictures/neige.gif);
+		    background-size: 1570px 760px;
+		}
+		
+		#canvas2 {
+			border: ridge;
+			position: fixed;
+			top: 40px;
+			left: 150px;
+			margin-top: 40px;
+		}
+		#countdown2{
+		    border: ridge;
+		    margin-top: -70px;
+		    margin-left: 260px;
+		    width: 250px;
+		    height: 60px;
+		    background: yellow;
+		}
+
+		#score2{
+		    border: ridge;
+		    margin-top: -65px;
+		    margin-left: -350px;
+		    width: 250px;
+		    height:60px;
+		    background: orange;
+		}
+		
+		#audio_neige{
+			margin-top: -70px;
+			margin-left: 1000px;
+			position: fixed;
+		}
+		
+	
+		.retour2{
+		    margin-left: -900px;
+			margin-top: 30px;
+		}
+		
+		/*-------------------------Laby feu -------------------------------------------*/
+		
+		#feu{
+			background-image:url('../pictures/fond3.jpg');
+			background-size: 1570px 780px;
+		}
+		#canvas4 {
+			border: ridge;
+			position: fixed;
+			margin-top: 90px;
+			margin-left: -90px;
+			
+		}
+		#heure{
+		margin-top: 30px;
+		margin-left: 300px;
+		width: 250px;
+		height:60px;
+		background : linear-gradient(yellow, orange,red);
+		}
+
+		#score4{	
+		margin-top: -60px;
+		margin-left: -400px;
+		width:250px;
+		height:60px;
+		background : linear-gradient(yellow, orange,red);
+		}
+		
+		#audio_feu{
+			margin-top: -90px;
+			margin-left: 800px;
+			position: fixed;
+		}
+		
+		.retour4{
+		    margin-left: -1100px;
+			margin-top: -15px;
+		}
+
+		
+		
+									/*------------17 - 19 pouce-----------------*/
+									
+@media screen and (min-width: 1500px) and (max-width: 1920px){
+
+									/*-----------Laby Manoir--------------------*/
+
+	#manoir{
+		background-size: 1920px 1100px;	
+	}
+
+	#countdown1{
+		margin-top: 300px;
+		margin-left: 1300px;
+	}
+	
+	#canvas1 {
+		margin-top: -100px;
+		margin-left: 200px;
+		float:right;
+	}
+	
+	#score1{
+		text-align:center;
+		margin-top: 100px;
+		margin-left: 1300px;
+	}
+
+	audio{
+		margin-left: 1280px;
+		margin-top:  240px;
+	}
+	
+	
+
+
+
+									/*-----------Laby Ténèbres------------------*/
+	#tenebres{
+		background-image: url(../pictures/8070.jpg);
+		background-color:white;
+		background-size: 1920px 1100px;
+	}
+
+	#tab{
+		background-image: url(../pictures/tumblr10.png);
+		margin-left: 85%;
+		margin-top: 10px;
+		width: 181px;
+		height: 512px;
+	}
+
+	#tab1{
+		background-image: url(../pictures/magicien_des_tenebres.png);
+		margin-left: -65%;
+		margin-top: -500px;
+		width: 180px;
+		height: 512px;
+	}
+
+	.bonjour{
+		text-align: center;
+		color: red;
+		background-image: url(../pictures/Caius_Monarque_YuGiOh.png);
+	} 
+
+	audio{
+		margin-top: 100px;
+		margin-left: -25px;
+		position: fixed;
+	}
+	
+	canvas {
+			border: ridge;
+			margin-left: 230px;
+			margin-top: 200px;
+	}
+		
+	#countdown{
+		margin-top: -80px;
+		margin-left: 500px;
+		width: 250px;
+		height: 60px;
+		background: #8d4e93;
+	}
+
+	#score{
+		margin-top: -60px;
+		margin-left: -100px;
+		width: 250px;
+		height:60px;
+		background: #dd69a2;
+	}
+	
+	.retour{
+		    margin-left: -700px;
+			margin-top: 160px;
+		}
+		/*-------------------------------------Laby neige---------------------------*/
+		
+	#neige{
+		background-size: 1920px 1100px;
+	}
+	
+	#canvas2 {
+		border: ridge;
+		position: fixed;
+		left: 260px;
+		margin-top: 140px;
+	}
+	
+	#countdown2{
+		margin-top: -70px;
+		margin-left: 400px;
+		width: 250px;
+		height: 60px;
+		background: yellow;
+	}
+
+	#score2{
+		margin-top: -65px;
+		margin-left: -200px;
+		width: 250px;
+		height:60px;
+		background: orange;
+	}
+	
+	#audio_neige{
+		margin-top: 580px;
+		margin-left: 850px;
+		position: fixed;
+	}
+	
+	.retour2{
+		    margin-left: -900px;
+			margin-top: 100px;
+		}
+	
+	
+		/*-------------------------Laby feu -------------------------------------------*/
+		
+	#feu{
+		background-size: 1920px 1100px;
+	}
+	
+	#canvas4 {
+		border: ridge;
+		position: fixed;
+		margin-top: 100px;
+		margin-left: 100px;
+	}
+
+	#heure{
+		margin-left: 350px;
+		margin-top: 100px;
+	}
+
+	#score4{	
+		margin-top: -60px;
+		margin-left: -400px;
+	}
+	
+	#audio_feu{
+		margin-top: 630px;
+		margin-left: 400px;
+		position: fixed;
+	}	
+	
+	.retour4{
+		    margin-left: -1100px;
+			margin-top: 0px;
+		}
+	
+}
+
+
+
+														/*Pour tous les laby*/
+
+
+
+
+
+#countdownmul{
+
+	border: ridge;
+	margin-top: 522px;
+	margin-left: 530px;
+	width: 250px;
+	height: 40px;
+	background-image:linear-gradient(gray,white,gray);
+
+}
+
+
+
+#scoremul{
+
+	border: ridge;
+
+	width: 250px;
+
+	height:60px;
+
+	background: #dd69a2;
+
+}
+
+
+
+
+
+					/*-------------------------15,6 pouce----------------------------*/
+
+@media screen and (min-width: 1366px) and (max-width: 1499px){			
+
+								
+
+				/*-------------------------Laby mul -------------------------------------------*/
+
+		
+
+	#mult{
+		background-image: url(../pictures/poing.jpg);
+		background-size: 1370px 800px;
+		position:fixed;
+		
+
+		}
+
+	#canvas5 {
+
+		top: 15px;
+
+		margin-left: -85px;
+
+	}
+
+
+
+	#scoremul{
+
+		margin-top: -65px;
+
+		margin-left: -300px;
+
+	}
+
+	
+
+	.retourmul{
+
+		    margin-left: -1000px;
+
+			margin-top: 30px;
+
+		}
+
+
+
+}	
+
+		
+
+									/*------------17 - 19 pouce-----------------*/
+
+									
+
+@media screen and (min-width: 1570px){
+
+
+
+								
+
+	/*-----------Laby multi------------------*/
+
+	#mult{
+
+		background-size: 1920px 1100px;
+
+	}
+
+
+
+	#canvas5 {
+
+		top: -50px;
+
+		margin-left: 290px;
+
+	}
+
+
+
+	#scoremul{
+
+		margin-top: -65px;
+
+		margin-left: -550px;
+
+	}
+
+	
+
+	.retourmul{
+
+		    margin-left: -1200px;
+
+			margin-top: 90px;
+
+	}

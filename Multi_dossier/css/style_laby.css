@@ -1,0 +1,73 @@
+														/*Pour tous les laby*/
+
+
+#countdownmul{
+	border: ridge;
+	width: 250px;
+	height: 60px;
+	background: #8d4e93;
+}
+
+#scoremul{
+	border: ridge;
+	width: 250px;
+	height:60px;
+	background: #dd69a2;
+}
+
+
+					/*-------------------------15,6 pouce----------------------------*/
+@media screen and (min-width: 1366px) and (max-width: 1499px){			
+								
+				/*-------------------------Laby mul -------------------------------------------*/
+		
+		#mul{
+			background-size: 1570px 780px;
+		}
+		
+	#countdownmul{
+		margin-top: -70px;
+		margin-left: 400px;
+	}
+
+	#scoremul{
+		margin-top: -65px;
+		margin-left: -300px;
+	}
+	
+	.retourmul{
+		    margin-left: -1000px;
+			margin-top: 30px;
+		}
+
+}	
+		
+									/*------------17 - 19 pouce-----------------*/
+									
+@media screen and (min-width: 1570px){
+
+								
+	/*-----------Laby multi------------------*/
+	#tenebres{
+		background-size: 1920px 1100px;
+	}
+
+	#canvas5 {
+		top: -50px;
+		left: 290px;
+	}
+		
+	#countdownmul{
+		margin-top: -120px;
+		margin-left: 280px;
+	}
+
+	#scoremul{
+		margin-top: -65px;
+		margin-left: -550px;
+	}
+	
+	.retourmul{
+		    margin-left: -1200px;
+			margin-top: 90px;
+	}

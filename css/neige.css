@@ -1,0 +1,41 @@
+/*-------------------------------------Laby neige------------------------*/
+		
+		#neige{
+		    background-image: url(../pictures/neige.gif);
+		    background-size: 1570px 760px;
+		}
+		
+		#canvas2 {
+			border: ridge;
+			position: fixed;
+			top: 40px;
+			left: 200px;
+			margin-top: 40px;
+		}
+		#countdown2{
+		    border: ridge;
+		    margin-top: 6px;
+		    margin-left: 300px;
+		    width: 250px;
+		    height: 60px;
+		    background: yellow;
+		}
+
+		#score2{
+		    border: ridge;
+		    margin-top: -66px;
+		    margin-left: -500px;
+		    width: 250px;
+		    height:60px;
+		    background: orange;
+		}
+		
+		#audio_neige{
+			margin-top: -75px;
+			margin-left: 1080px;
+			position: fixed;
+		}
+
+
+
+		
